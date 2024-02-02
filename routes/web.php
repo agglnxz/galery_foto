@@ -20,10 +20,6 @@ use App\Http\Controllers\WelcomeController;
 //    return view('welcome');
 // });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 route::get('/',[WelcomeController::class,'index'])->name('welcome');
 
 Route::get('/galery.index',[GaleryFotoController::class,'index'])->name('galery.index');
