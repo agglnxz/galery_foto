@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GaleryFotoController;
 use App\Http\Controllers\WelcomeController;
-
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,16 @@ use App\Http\Controllers\WelcomeController;
 |
 */
 
-// Route::get('/', function () {
-//    return view('welcome');
-// });
+Route::get('/',[WelcomeController::class,'index'])->name('dashboard');
 
-route::get('/',[WelcomeController::class,'index'])->name('welcome');
+
+Route::get('/login',[LoginController::class,'index'])->name('login');
+Route::post('/login-proses',[LoginController::class,'login_proses'])->name('login-proses');
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+
+Route::get('/register',[RegisterController::class,'register'])->name('register');
+Route::post('/register_proses',[RegisterController::class,'register_proses'])->name('register_proses');
+
+
 
 Route::get('/galery.index',[GaleryFotoController::class,'index'])->name('galery.index');
-
-route::get('/dashboard',[WelcomeController::class,'show'])->name('dashboard');
-route::get('/student',[WelcomeController::class,'student'])->name('student');
