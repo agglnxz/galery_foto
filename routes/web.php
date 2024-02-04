@@ -5,6 +5,7 @@ use App\Http\Controllers\GaleryFotoController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,13 @@ Route::post('/login-proses',[LoginController::class,'login_proses'])->name('logi
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 Route::get('/register',[RegisterController::class,'register'])->name('register');
-Route::post('/register_proses',[RegisterController::class,'register_proses'])->name('register_proses');
+Route::post('/register-proses',[RegisterController::class,'register_proses'])->name('register-proses');
 
 
-
+// galery
 Route::get('/galery.index',[GaleryFotoController::class,'index'])->name('galery.index');
+
+// profile
+Route::get('/profile.index',[ProfileController::class,'index'])->name('profile.index');
+Route::get('/profile.edit',[ProfileController::class,'edit'])->name('profile.edit');
+Route::post('/profile.update',[ProfileController::class,'update'])->name('profile.update');

@@ -8,11 +8,9 @@
         </a>
         <img src="img/menu-icon.png" alt="" class="menu-icon">
         <ul class="main-menu">
-            <li class="active"><a href="./home.html">Home</a></li>
-            <li><a href="./gallery.html">Gallery</a></li>
-            <li><a href="./gallery-single.html">Single gallery</a></li>
-            <li><a href="./blog.html">Blog</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="{{route('dashboard')}}">Home</a></li>
+            <li><a href="{{route('galery.index')}}">Gallery</a></li>
+            <li><a href="{{route('profile.index')}}">Profile</a></li>
         </ul>
         {{-- <div class="social-links-warp">
             <div class="social-links">

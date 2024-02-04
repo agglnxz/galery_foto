@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
@@ -15,9 +15,16 @@ class RegisterController extends Controller
 
     public function register_proses(Request $request){
         $request->validate([
-            'name' =>'required',
+            'name' => 'required',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:8'
+            'password' => 'required|min:8',
+        ], [
+            'name.required' => 'Nama wajib diisi.',
+            'email.required' => 'Email wajib diisi.',
+            'email.email' => 'Format email tidak valid.',
+            'email.unique' => 'Email sudah digunakan.',
+            'password.required' => 'Password wajib diisi.',
+            'password.min' => 'Password minimal 8 karakter.',
         ]);
         $data=[
             'name' => $request->name,
@@ -27,7 +34,7 @@ class RegisterController extends Controller
 
         User::create($data);
 
-        return Redirect::route('login')->with('success', 'Registrasi berhasil! Silakan login.');
+        return Redirect()->back()->with('success', 'Registrasi berhasil! Silakan login.');
 
     }
 }

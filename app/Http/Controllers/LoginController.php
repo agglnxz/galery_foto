@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use app\Models\User;
 
 class LoginController extends Controller
 {
@@ -23,6 +24,7 @@ class LoginController extends Controller
         'email' => $request->email,
         'password' => $request->password
       ];
+
       if(Auth::attempt($data)){
         return redirect()->route('dashboard');
       }else{
