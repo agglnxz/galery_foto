@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('nama_album');
             $table->text('deskripsi');
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
-        
+
     }
 
     /**
