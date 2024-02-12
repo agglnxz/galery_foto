@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Profile;
+use App\Models\Like;
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class LikeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('profile.index');
+        //
     }
 
     /**
@@ -34,7 +34,7 @@ class ProfileController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(profile $profile)
+    public function show(Like $like)
     {
         //
     }
@@ -42,7 +42,7 @@ class ProfileController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(profile $profile)
+    public function edit(Like $like)
     {
         //
     }
@@ -50,7 +50,7 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, profile $profile)
+    public function update(Request $request, Like $like)
     {
         //
     }
@@ -58,7 +58,7 @@ class ProfileController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(profile $profile)
+    public function destroy(Like $like)
     {
         //
     }

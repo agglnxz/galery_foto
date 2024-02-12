@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GaleryFotoController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -29,8 +29,8 @@ Route::get('/register',[RegisterController::class,'register'])->name('register')
 Route::post('/register-proses',[RegisterController::class,'register_proses'])->name('register-proses');
 
 
-// galery
-Route::get('/galery.index',[GaleryFotoController::class,'index'])->name('galery.index');
+// photo
+Route::get('/photo.index',[PhotoController::class,'index'])->name('photo.index');
 
 // profile
 Route::get('/profile.index',[ProfileController::class,'index'])->name('profile.index');

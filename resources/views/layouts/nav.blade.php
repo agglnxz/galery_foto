@@ -8,9 +8,9 @@
         </a>
         <img src="img/menu-icon.png" alt="" class="menu-icon">
         <ul class="main-menu">
-            <li><a href="{{route('dashboard')}}">Home</a></li>
-            <li><a href="{{route('galery.index')}}">Gallery</a></li>
-            <li><a href="{{route('profile.index')}}">Profile</a></li>
+            <li class="{{request()->is('/') ? 'active' : ''}}"><a href="{{route('dashboard')}}">Home</a></li>
+            <li class="{{request()->is('photo.index') ? 'active' : ''}}"><a href="{{route('photo.index')}}">Gallery</a></li>
+            <li class="{{request()->is('profile.index') ? 'active' : ''}}"><a href="{{route('profile.index')}}">Profile</a></li>
         </ul>
         {{-- <div class="social-links-warp">
             <div class="social-links">
