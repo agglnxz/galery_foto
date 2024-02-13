@@ -27,7 +27,7 @@
                     <div class="login-wrap p-0">
                         <h3 class="mb-4 text-center">login to start your session</h3>
                         <form action="{{ route('login-proses')}}" method="POST" class="signin-form">
-                            @csrf
+                            @csrf 
                             <div class="form-group">
                                 <input type="text" name="email" class="form-control" placeholder="Email">
                             </div>

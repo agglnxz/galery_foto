@@ -17,10 +17,12 @@ class RegisterController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
+            'address' => 'required',
             'password' => 'required|min:8',
         ], [
             'name.required' => 'Nama wajib diisi.',
             'email.required' => 'Email wajib diisi.',
+            'address.required' => 'Email wajib diisi.',
             'email.email' => 'Format email tidak valid.',
             'email.unique' => 'Email sudah digunakan.',
             'password.required' => 'Password wajib diisi.',
@@ -29,6 +31,7 @@ class RegisterController extends Controller
         $data=[
             'name' => $request->name,
             'email' => $request->email,
+            'address' => $request->address,
             'password' => Hash::make($request->password)
         ];
 

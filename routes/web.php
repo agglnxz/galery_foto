@@ -20,11 +20,12 @@ use App\Http\Controllers\ProfileController;
 
 Route::get('/',[WelcomeController::class,'index'])->name('dashboard');
 
-
+// login
 Route::get('/login',[LoginController::class,'index'])->name('login');
 Route::post('/login-proses',[LoginController::class,'login_proses'])->name('login-proses');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
+// register
 Route::get('/register',[RegisterController::class,'register'])->name('register');
 Route::post('/register-proses',[RegisterController::class,'register_proses'])->name('register-proses');
 

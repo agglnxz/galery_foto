@@ -29,7 +29,7 @@
                         <form action="{{ route('register-proses')}}" method="POST" class="signin-form">
                             @csrf
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" value="{{old('nama')}}">
+                                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" value="{{old('name')}}">
                             </div>
                             @error('name')
                                 <p>{{ $message}}</p>
@@ -38,6 +38,12 @@
                                 <input type="text" name="email" class="form-control" placeholder="Email" value="{{old('email')}}">
                             </div>
                             @error('email')
+                            <p>{{ $message}}</p>
+                        @enderror
+                        <div class="form-group">
+                            <input type="text" name="address" class="form-control" placeholder="Alamat" value="{{old('address')}}">
+                        </div>
+                        @error('address')
                             <p>{{ $message}}</p>
                         @enderror
                             <div class="form-group">

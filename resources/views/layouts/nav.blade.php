@@ -10,7 +10,15 @@
         <ul class="main-menu">
             <li class="{{request()->is('/') ? 'active' : ''}}"><a href="{{route('dashboard')}}">Home</a></li>
             <li class="{{request()->is('photo.index') ? 'active' : ''}}"><a href="{{route('photo.index')}}">Gallery</a></li>
-            <li class="{{request()->is('profile.index') ? 'active' : ''}}"><a href="{{route('profile.index')}}">Profile</a></li>
+
+            @if(auth()->check())
+            <!-- Jika pengguna sudah login -->
+            <li class="{{ request()->is('profile.index') ? 'active' : '' }}"><a href="{{ route('profile.index') }}">Profile</a></li>
+            <li><a href="{{ route('logout') }}">Logout</a></li>
+        @else
+            <!-- Jika pengguna belum login -->
+            <li class="{{ request()->is('login') ? 'active' : '' }}"><a href="{{ route('login') }}">Login</a></li>
+        @endif
         </ul>
         {{-- <div class="social-links-warp">
             <div class="social-links">
