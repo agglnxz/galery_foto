@@ -22,7 +22,7 @@ class RegisterController extends Controller
         ], [
             'name.required' => 'Nama wajib diisi.',
             'email.required' => 'Email wajib diisi.',
-            'address.required' => 'Email wajib diisi.',
+            'address.required' => 'Alamat wajib diisi.',
             'email.email' => 'Format email tidak valid.',
             'email.unique' => 'Email sudah digunakan.',
             'password.required' => 'Password wajib diisi.',

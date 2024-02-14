@@ -14,7 +14,7 @@
 
 </head>
 
-<body class="img js-fullheight" style="background-image: url(style-login/images/bg.jpg);">
+<body class="img js-fullheight" style="background-image: url(style-login/images/background.jpg);">
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -27,12 +27,12 @@
                     <div class="login-wrap p-0">
                         <h3 class="mb-4 text-center">login to start your session</h3>
                         <form action="{{ route('login-proses')}}" method="POST" class="signin-form">
-                            @csrf 
+                            @csrf
                             <div class="form-group">
                                 <input type="text" name="email" class="form-control" placeholder="Email">
                             </div>
                                 @error('email')
-                                  <p>{{ $message }}</p>
+                                  <p style="color:red">{{ $message }}</p>
                                 @enderror
                             <div class="form-group">
                                 <input id="password-field" name="password" type="password" class="form-control" placeholder="Password">
@@ -40,7 +40,7 @@
                                     class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
                             @error('password')
-                                  <p>{{ $message }}</p>
+                                  <p style="color:red">{{ $message }}</p>
                                 @enderror
                             <div class="form-group">
                                 <button type="submit" class="form-control btn btn-primary submit px-3">login</button>

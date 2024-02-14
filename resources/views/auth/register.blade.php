@@ -14,7 +14,7 @@
 
 </head>
 
-<body class="img js-fullheight" style="background-image: url(style-login/images/bg.jpg);">
+<body class="img js-fullheight" style="background-image: url('style-login/images/background.jpg');height:100%">
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -32,19 +32,19 @@
                                 <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" value="{{old('name')}}">
                             </div>
                             @error('name')
-                                <p>{{ $message}}</p>
+                                <p style="color:red">{{ $message}}</p>
                             @enderror
                             <div class="form-group">
                                 <input type="text" name="email" class="form-control" placeholder="Email" value="{{old('email')}}">
                             </div>
                             @error('email')
-                            <p>{{ $message}}</p>
+                            <p style="color:red">{{ $message}}</p>
                         @enderror
                         <div class="form-group">
                             <input type="text" name="address" class="form-control" placeholder="Alamat" value="{{old('address')}}">
                         </div>
                         @error('address')
-                            <p>{{ $message}}</p>
+                            <p style="color:red">{{ $message}}</p>
                         @enderror
                             <div class="form-group">
                                 <input id="password-field" name="password" type="password" class="form-control" placeholder="Password" value="{{old('password')}}">
@@ -52,7 +52,7 @@
                                     class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
                             @error('password')
-                            <p>{{ $message}}</p>
+                            <p style="color:red">{{ $message}}</p>
                         @enderror
                             <div class="form-group">
                                 <button type="submit" class="form-control btn btn-primary submit px-3">Register</button>
