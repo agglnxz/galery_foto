@@ -14,8 +14,6 @@ class Photo extends Model
         'deskipsi',
         'lokasi_file',
         'album_id',
-        'user_id',
-
-
+        'user_id'
     ];
 }
