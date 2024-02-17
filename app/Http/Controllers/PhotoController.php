@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Photo;
 use Illuminate\Http\Request;
 
-class photoController extends Controller
+class PhotoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('photo.index');
+        $foto= Photo::all();
+        return view('photo.index',compact('foto'));
     }
 
     /**
@@ -28,11 +29,6 @@ class photoController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nama'=>"required",
-            'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'description'=>"required",
-        ]);
 
 
     }

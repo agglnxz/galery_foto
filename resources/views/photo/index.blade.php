@@ -9,44 +9,22 @@
         <li class="filter" data-filter=".love">Love</li>
         <li class="filter" data-filter=".animals">Animals</li>
     </ul>
+
+    @forelse ($foto as $item )
     <div class="portfolio-gallery">
         <div class="gallery-item animals">
-            <img src="img/gallery/1.jpg" alt="">
+            <img src="{{asset($item->lokasi_file)}}" alt="kazuha.jpg">
             <div class="hover-links">
                 <a href="" class="site-btn sb-light">Next</a>
             </div>
         </div>
-        <div class="gallery-item nature">
-            <img src="img/gallery/2.jpg" alt="">
-            <div class="hover-links">
-                <a href="" class="site-btn sb-light">Next</a>
-            </div>
-        </div>
-        <div class="gallery-item love">
-            <img src="img/gallery/3.jpg" alt="">
-            <div class="hover-links">
-                <a href="" class="site-btn sb-light">Next</a>
-            </div>
-        </div>
-        <div class="gallery-item photo">
-            <img src="img/gallery/5.jpg" alt="">
-            <div class="hover-links">
-                <a href="" class="site-btn sb-light">Next</a>
-            </div>
-        </div>
-        <div class="gallery-item nature">
-            <img src="img/gallery/6.jpg" alt="">
-            <div class="hover-links">
-                <a href="" class="site-btn sb-light">Next</a>
-            </div>
-        </div>
-        <div class="gallery-item photo">
-            <img src="img/gallery/4.jpg" alt="">
-            <div class="hover-links">
-                <a href="" class="site-btn sb-light">Next</a>
-            </div>
-        </div>
-    </div>
+
+    @empty
+     <div>
+         <h1>Tidak ada data</h1>
+     </div>
+    @endforelse
+
 
 </div>
 <!-- Page section end-->

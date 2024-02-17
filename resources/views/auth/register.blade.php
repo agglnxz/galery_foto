@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="style-login/css/style.css">
 
 </head>
-
 <body class="img js-fullheight" style="background-image: url('style-login/images/background.jpg');height:100%">
     <section class="ftco-section">
         <div class="container">

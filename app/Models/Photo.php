@@ -5,14 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class GaleryFoto extends Model
+class Photo extends Model
 {
     use HasFactory;
-    protected $table = 'photo';
+    protected $table = 'photos';
     protected $fillable = [
-        'foto',
-        'nama',
-        'description',
+        'judul_foto',
+        'deskipsi',
+        'lokasi_file',
+        'album_id',
+        'user_id',
+
 
     ];
 }

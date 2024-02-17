@@ -24,7 +24,7 @@ Route::middleware(['guest'])->group(function () {
   // login
     Route::get('/login',[LoginController::class,'index'])->name('login');
     Route::post('/login-proses',[LoginController::class,'login_proses'])->name('login-proses');
-    Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+
 
   // register
     Route::get('/register',[RegisterController::class,'register'])->name('register');
@@ -36,6 +36,7 @@ Route::middleware(['guest'])->group(function () {
 Route::get('/photo.index',[PhotoController::class,'index'])->name('photo.index');
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/logout',[LoginController::class,'logout'])->name('logout');
   // profile
     Route::get('/profile.index',[ProfileController::class,'index'])->name('profile.index');
     Route::get('/profile.edit',[ProfileController::class,'edit'])->name('profile.edit');
