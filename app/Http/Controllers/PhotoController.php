@@ -36,7 +36,7 @@ class PhotoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Foto $galeryFoto)
+    public function show(Photo $photo)
     {
         //
     }
@@ -44,7 +44,7 @@ class PhotoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Foto $galeryFoto)
+    public function edit(Photo $photo)
     {
         //
     }
@@ -52,7 +52,7 @@ class PhotoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Foto $Foto)
+    public function update(Request $request, Photo $photo)
     {
         //
     }
@@ -60,7 +60,7 @@ class PhotoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Foto $Foto)
+    public function destroy(Photo $Photo )
     {
         //
     }
