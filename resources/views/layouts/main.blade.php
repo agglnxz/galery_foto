@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-	<title>Photo Gallery HTML Template</title>
+	<title>Photo Gallery Gall</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Photo Gallery HTML Template">
 	<meta name="keywords" content="endGam,gGaming, magazine, html">
@@ -36,14 +36,14 @@
 	</div>
 
 	<!-- Top right elements -->
-	<div class="spacial-controls">
+	{{-- <div class="spacial-controls">
 		<div class="search-switch"><img src="img/search-icon.png" alt=""></div>
 		<div class="nav-switch-warp">
 			<div class="nav-switch">
 				<div class="ns-bar"></div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!-- Top right elements end -->
 
 	<div class="main-warp">
@@ -57,14 +57,14 @@
 	</div>
 
 	<!-- Search model -->
-	<div class="search-model">
+	{{-- <div class="search-model">
 		<div class="h-100 d-flex align-items-center justify-content-center">
 			<div class="search-close-switch">x</div>
 			<form class="search-moderl-form">
 				<input type="text" id="search-input" placeholder="Search here.....">
 			</form>
 		</div>
-	</div>
+	</div> --}}
 	<!-- Search model end -->
 
 
@@ -77,6 +77,5 @@
 	<script src="js/imagesloaded.pkgd.min.js"></script>
 	<script src="js/circle-progress.min.js"></script>
 	<script src="js/main.js"></script>
-
 	</body>
 </html>

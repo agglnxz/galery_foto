@@ -20,9 +20,9 @@
         </div>
 
     @empty
-     <div>
-         <h1>Tidak ada data</h1>
-     </div>
+    <div class="alert alert-danger" role="alert">
+       Tidak ada data
+      </div>
     @endforelse
 
 

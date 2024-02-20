@@ -36,8 +36,11 @@ class RegisterController extends Controller
         ];
 
         User::create($data);
+        
+            return Redirect()->route('login')->with('success', 'Registrasi berhasil! Silakan login.');
 
-        return Redirect()->back()->with('success', 'Registrasi berhasil! Silakan login.');
+
+
 
     }
 }

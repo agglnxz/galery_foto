@@ -14,7 +14,11 @@
             @if(auth()->check())
             <!-- Jika pengguna sudah login -->
             <li class="{{ request()->is('profile.index') ? 'active' : '' }}"><a href="{{ route('profile.index') }}">Profile</a></li>
-            <li><a href="{{ route('logout') }}">Logout</a></li>
+
+            <form action="{{route('logout')}}" method="POST" id="form-logout">
+                @csrf
+            <li><a onclick="event.preventDefault(); document.getElementById('form-logout').submit()" type="submit">Logout</a></li>
+           </form>
         @else
             <!-- Jika pengguna belum login -->
             <li><a href="{{ route('login') }}">Login</a></li>

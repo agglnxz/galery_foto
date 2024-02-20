@@ -16,4 +16,13 @@ class Photo extends Model
         'album_id',
         'user_id'
     ];
+    /**
+     * Get the user that owns the Photo
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

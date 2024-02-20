@@ -36,8 +36,13 @@ Route::middleware(['guest'])->group(function () {
 Route::get('/photo.index',[PhotoController::class,'index'])->name('photo.index');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+    Route::post('/logout',[LoginController::class,'logout'])->name('logout');
+
+    Route::get('/logout',function () {
+        return redirect()->route('login')->with(['danger','anda kontol']);
+});
   // profile
+  
     Route::get('/profile.index',[ProfileController::class,'index'])->name('profile.index');
     Route::get('/profile.edit',[ProfileController::class,'edit'])->name('profile.edit');
     Route::post('/profile.update',[ProfileController::class,'update'])->name('profile.update');
