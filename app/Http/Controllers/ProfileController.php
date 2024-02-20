@@ -14,9 +14,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $user = User::all();
         $foto = Photo::all();
-        return view('profile.index',compact('foto', 'user'));
+        return view('profile.index',compact('foto'));
     }
 
     /**
