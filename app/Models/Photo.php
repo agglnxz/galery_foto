@@ -11,7 +11,7 @@ class Photo extends Model
     protected $table = 'photos';
     protected $fillable = [
         'judul_foto',
-        'deskipsi',
+        'deskripsi',
         'lokasi_file',
         'album_id',
         'user_id'
@@ -21,7 +21,7 @@ class Photo extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user(): BelongsTo
+    public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }

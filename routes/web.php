@@ -39,12 +39,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/logout',[LoginController::class,'logout'])->name('logout');
 
     Route::get('/logout',function () {
-        return redirect()->route('login')->with(['danger','anda kontol']);
+        return redirect()->route('login')->with(['danger','anda harus login!!!']);
 });
   // profile
-  
     Route::get('/profile.index',[ProfileController::class,'index'])->name('profile.index');
-    Route::get('/profile.edit',[ProfileController::class,'edit'])->name('profile.edit');
-    Route::post('/profile.update',[ProfileController::class,'update'])->name('profile.update');
+    
+  // tambah foto
+    Route::post('/add-photo',[PhotoController::class,'store'])->name('add_photo');
 
 });

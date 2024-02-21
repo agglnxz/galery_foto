@@ -49,7 +49,7 @@ class User extends Authenticatable
         *
         * @return \Illuminate\Database\Eloquent\Relations\HasMany
         */
-       public function photos(): HasMany
+       public function photos()
        {
            return $this->hasMany(Photo::class, 'user_id');
        }
