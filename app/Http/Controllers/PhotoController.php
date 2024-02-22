@@ -64,9 +64,10 @@ class PhotoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Photo $photo)
+    public function show(string $id)
     {
-        //
+        $foto = Photo::find($id);
+        return view('photo.show',compact('foto'));
     }
 
     /**

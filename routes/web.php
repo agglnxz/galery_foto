@@ -19,7 +19,8 @@ use App\Http\Controllers\ProfileController;
 */
 
 Route::get('/',[WelcomeController::class,'index'])->name('dashboard');
-
+// detail foto
+Route::get('/detail-photo/{id}',[PhotoController::class,'show'])->name('detail-photo');
 Route::middleware(['guest'])->group(function () {
   // login
     Route::get('/login',[LoginController::class,'index'])->name('login');
@@ -43,8 +44,10 @@ Route::middleware(['auth'])->group(function () {
 });
   // profile
     Route::get('/profile.index',[ProfileController::class,'index'])->name('profile.index');
-    
+
   // tambah foto
     Route::post('/add-photo',[PhotoController::class,'store'])->name('add_photo');
+
+
 
 });

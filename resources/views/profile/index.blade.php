@@ -50,8 +50,8 @@
                     </div>
                     <div class="row">
                         @forelse (Auth::user()->photos as $item)
-                            <div class="col-lg-6 mb-2 pr-lg-1">
-                                <img src="{{'storage/images/'. $item->lokasi_file }}" alt="" width="350" height=""
+                            <div class="col-lg-4 mb-2 pr-lg-1">
+                                <img src="{{'storage/images/'. $item->lokasi_file }}" alt=""
                                     class="img-fluid rounded shadow-sm">
                             </div>
                         @empty
