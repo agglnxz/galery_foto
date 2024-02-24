@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Like;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LikeController extends Controller
 {
@@ -26,9 +27,21 @@ class LikeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(string $id)
     {
-        //
+
+    $cek = Like::where('user_id',Auth::user()->id)->where('foto_id',$id)->count();
+    if($cek >= 1){
+      $like = Like::where('user_id',Auth::user()->id)->where('foto_id',$id)->first();
+      $like->delete();
+    }
+    else{
+        $like= Like::create([
+            'user_id' => Auth::user()->id,
+            'foto_id' => $id
+        ]);
+    }
+      return redirect()->back();
     }
 
     /**

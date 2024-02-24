@@ -25,4 +25,23 @@ class Photo extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    /**
+     * Get all of the like for the Photo
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function Like()
+    {
+        return $this->hasMany(Like::class, 'foto_id');
+    }
+    /**
+     * Get all of the comment for the Photo
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function Comment()
+    {
+        return $this->hasMany(Comment::class, 'foto_id');
+    }
 }

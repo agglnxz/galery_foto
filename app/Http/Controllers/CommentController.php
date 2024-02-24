@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -26,9 +27,15 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(string $id,Request $request)
     {
-        //
+        Comment::create([
+            'user_id' => Auth::user()->id,
+            'foto_id' => $id,
+            'isi_komentar' => $request->isi_komentar
+
+        ]);
+        return redirect()->back();
     }
 
     /**
