@@ -19,6 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'poto_profile',
         'email',
         'address',
         'password'

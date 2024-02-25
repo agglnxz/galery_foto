@@ -57,4 +57,7 @@ Route::middleware(['auth'])->group(function () {
     // comments
     Route::post('/comments/{id}',[CommentController::class,'store'])->name('comments');
 
+    // edit profil
+    Route::post('edit_profil',[ProfileController::class,'update'])->name('edit_profil');
+
 });

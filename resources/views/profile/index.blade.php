@@ -8,8 +8,13 @@
                     @if (Auth::check())
                         <?php $user = Auth::user(); ?>
                         <div class="media d-flex align-items-center mb-4">
-                            <img src="https://i1.sndcdn.com/artworks-qxyub3eQjxUjOND4-OzJXOA-t500x500.jpg" alt="..."
-                                width="250" class="rounded mb-2 img-thumbnail">
+                            @if (!empty($user->poto_profil))
+                            <img src="{{asset('storage/images/'.$user->poto_profil)}}" alt="..."
+                            width="250" class="rounded mb-2 img-thumbnail">
+                            @else
+                            <img src="{{asset('img/profile_default.jpg')}}" alt="..."
+                            width="250" class="rounded mb-2 img-thumbnail">
+                            @endif
                             <div class="media-body ml-4 mx-3 text-dark">
                                 <h4 class="mt-0 mb-1">{{ $user->name }}</h4>
                                 <p class="small mb-1"><i class="fas fa-map-marker-alt mx-1"></i>{{ $user->address }}</p>
@@ -27,7 +32,10 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-outline-dark">Edit profile</a>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                        data-bs-target="#editProfile">
+                        Edit Profile
+                    </button>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
                             data-bs-target="#tambahFoto">
@@ -75,7 +83,6 @@
                 <div class="modal-body">
                     <form action="{{ route('add_photo') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        {{-- <input type="hidden" name="user_id" value="{{ Auth::User()->id }}"> --}}
 
                         <div class="mb-3">
                             <label for="input_judul" class="form-label">Judul Foto</label>
@@ -117,16 +124,67 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="editProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah foto</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('edit_profil') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" id="nama" name="name" class="form-control" value="{{old('name')}}">
+                            @error('name')
+                                <small style="color: red">
+                                    {{ $message }}
+                                </small>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="foto" class="form-label">Pilih foto</label>
+                            <input class="form-control" name="poto_profil" type="file" id="foto">
+                             @error('poto_profil')
+                                <small style="color: red">
+                                    {{ $message }}
+                                </small>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="input_addres" class="form-label">Alamat</label>
+                            <input id="input_address" type="text" name="address" class="form-control">
+                            @error('address')
+                                <small style="color: red">
+                                    {{ $message }}
+                                @enderror
+                            </small>
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://kit.fontawesome.com/52c8909dfd.js" crossorigin="anonymous"></script>
     <!-- Skrip JavaScript untuk memanggil modal -->
-    <script>
+    {{-- <script>
         const myModal = document.getElementById('myModal')
         const myInput = document.getElementById('myInput')
 
         myModal.addEventListener('shown.bs.modal', () => {
             myInput.focus()
         })
-    </script>
+    </script> --}}
 @endsection
 2
