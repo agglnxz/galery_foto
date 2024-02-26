@@ -30,20 +30,19 @@
 
 </head>
 <body>
-	<!-- Page Preloder -->
+	{{-- <!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
-	</div>
+	</div> --}}
 
 	<!-- Top right elements -->
-	{{-- <div class="spacial-controls">
-		<div class="search-switch"><img src="img/search-icon.png" alt=""></div>
+    <div class="spacial-controls">
 		<div class="nav-switch-warp">
 			<div class="nav-switch">
 				<div class="ns-bar"></div>
 			</div>
 		</div>
-	</div> --}}
+	</div>
 	<!-- Top right elements end -->
 
 	<div class="main-warp">

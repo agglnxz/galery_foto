@@ -21,11 +21,11 @@
                                 <div class="mt-3">
                                     <ul class="list-inline mb-1">
                                         <li class="list-inline-item">
-                                            <h5 class="font-weight-bold mb-0 d-block">215</h5><small class="text-muted"><i
+                                            <h5 class="font-weight-bold mb-0 d-block">{{$user->Photos->count()}}</h5><small class="text-muted"><i
                                                     class="fas fa-image mx-1"></i>Photos</small>
                                         </li>
                                         <li class="list-inline-item">
-                                            <h5 class="font-weight-bold mb-0 d-block">745</h5><small class="text-muted"><i
+                                            <h5 class="font-weight-bold mb-0 d-block">{{$user->like->count()}}</h5><small class="text-muted"><i
                                                     class="fas fa-heart mx-1"></i>Likes</small>
                                         </li>
                                     </ul>
@@ -72,7 +72,7 @@
 
     <!-- Page section end-->
 
-    <!-- Modal -->
+    <!-- Modal tambah foto -->
     <div class="modal fade" id="tambahFoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -124,7 +124,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal edit profile-->
     <div class="modal fade" id="editProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -187,4 +187,3 @@
         })
     </script> --}}
 @endsection
-2

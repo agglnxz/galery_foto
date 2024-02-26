@@ -19,7 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'poto_profile',
+        'poto_profil',
         'email',
         'address',
         'password'
@@ -53,5 +53,14 @@ class User extends Authenticatable
        public function photos()
        {
            return $this->hasMany(Photo::class, 'user_id');
+       }
+       /**
+        * Get all of the photos for the User
+        *
+        * @return \Illuminate\Database\Eloquent\Relations\HasMany
+        */
+       public function Like()
+       {
+           return $this->hasMany(Like::class, 'user_id');
        }
 }

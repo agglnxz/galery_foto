@@ -236,14 +236,14 @@ ol {
 	padding-left: 455px;
 }
 
-.spacial-controls {
+/* .spacial-controls {
 	position: fixed;
 	width: 111px;
 	height: 91px;
 	top: 0;
 	right: 0;
 	z-index: 999;
-}
+} */
 
 .spacial-controls .search-switch {
 	display: block;

@@ -35,6 +35,12 @@ class Photo extends Model
     {
         return $this->hasMany(Like::class, 'foto_id');
     }
+
+    public function isLike($id){
+
+       return  Like::where('user_id', $id)->where('foto_id', $this->id)->exists();
+
+    }
     /**
      * Get all of the comment for the Photo
      *
@@ -44,4 +50,6 @@ class Photo extends Model
     {
         return $this->hasMany(Comment::class, 'foto_id');
     }
+
+
 }
