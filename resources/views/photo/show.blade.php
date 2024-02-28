@@ -104,8 +104,10 @@
                             <div>
                                 <p class="mb-0"><strong>{{ $item->user->name }}</strong></p>
                                 <p class="mb-0 mx-1">{{ $item->isi_komentar }}</p>
-                                <!-- Ini adalah form untuk menghapus komentar -->
-                                <form id="deleteForm{{$item->id}}" action="{{ route('delete_comments', ['id' => $item->id]) }}"
+                                @auth
+                                @if (Auth::user()->id == $item->user->id)
+                                  <!-- Ini adalah form untuk menghapus komentar -->
+                                  <form id="deleteForm{{$item->id}}" action="{{ route('delete_comments', ['id' => $item->id]) }}"
                                     method="POST">
                                     @csrf
                                     @method('DELETE')
@@ -126,6 +128,7 @@
                                                 d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h8.925l-2 2H5v14h14v-6.95l2-2V19q0 .825-.587 1.413T19 21zm4-6v-4.25l9.175-9.175q.3-.3.675-.45t.75-.15q.4 0 .763.15t.662.45L22.425 3q.275.3.425.663T23 4.4q0 .375-.137.738t-.438.662L13.25 15zM21.025 4.4l-1.4-1.4zM11 13h1.4l5.8-5.8l-.7-.7l-.725-.7L11 11.575zm6.5-6.5l-.725-.7zl.7.7z" />
                                         </svg>
                                     </button>
+                                </form>
                                     <!-- Modal edit profile-->
                                     <div class="modal fade" id="edit{{ $item->id }}" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -140,12 +143,11 @@
                                                     <form action="{{ route('edit_comments', ['id' => $item]) }}"
                                                         method="POST">
                                                         @csrf
+                                                        @method('PUT')
                                                         <div class="mb-3">
                                                             <label for="komen" class="form-label">Komentar</label>
-                                                            <textarea type="text" id="komen" name="isi_komentar"
-                                                                class="form-control" value="{{ old('isi_komentar') }}">
-                                                            </textarea>
-                                                            @error('name')
+                                                            <textarea type="text" id="komen" name="isi_komentar" class="form-control">{{$item->isi_komentar}}</textarea>
+                                                            @error('isi_komentar')
                                                                 <small style="color: red">
                                                                     {{ $message }}
                                                                 </small>
@@ -158,18 +160,23 @@
                                                         data-bs-dismiss="modal">tutup</button>
                                                     <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                                                 </div>
-                                </form>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @endif
+
+                                @endauth
+
                             </div>
                         </div>
+                    @empty
+                <div>
+            <div class="alert alert-danger" role="alert">
+                Tidak ada data
             </div>
         </div>
-    </div>
-@empty
-    <div>
-        <div class="alert alert-danger" role="alert">
-            Tidak ada data
-        </div>
-    </div>
     @endforelse
 
     </section>

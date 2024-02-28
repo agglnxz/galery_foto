@@ -48,7 +48,7 @@ Route::middleware(['auth'])->group(function () {
 
   // profile
     Route::get('/profile.index',[ProfileController::class,'index'])->name('profile.index');
-    Route::post('edit_profil',[ProfileController::class,'update'])->name('edit_profil');
+    Route::put('edit_profil',[ProfileController::class,'update'])->name('edit_profil');
 
   // tambah foto
     Route::post('/add_photo',[PhotoController::class,'store'])->name('add_photo');
@@ -58,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
 
     // comments
     Route::post('/comments/{id}',[CommentController::class,'store'])->name('comments');
-    route::post('/edit_comments/{id}',[CommentController::class,'update'])->name('edit_comments');
+    route::put('/edit_comments/{id}',[CommentController::class,'update'])->name('edit_comments');
     Route::delete('/delete_comments/{id}',[CommentController::class,'destroy'])->name('delete_comments');
 
 
