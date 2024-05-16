@@ -31,6 +31,7 @@ class PhotoController extends Controller
     public function store(Request $request)
     {
         // validasi
+        // dd($request->all());
 
         $this->validate($request, [
             'judul_foto' => 'required',
